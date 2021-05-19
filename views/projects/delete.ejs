@@ -1,0 +1,12 @@
+<p>
+    Are you sure you really want to delete that?
+</p>
+<form action="/projects/delete" method="POST">
+    <input type="hidden" name="_id" value="<%= _id %>"/>
+    <a href="/projects" class="mdl-button mdl-js-button mdl-button--raised">
+        Back
+    </a>
+    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        Delete
+    </button>
+</form>

@@ -26,7 +26,7 @@ app.get("/", (request,response) => {
 app.get("/projects", (request,response) => {
     Project.find()
         .then(result => {
-            console.log(result)
+            // console.log(result)
             response.render("projects", {projects : result});
             })
         .catch(err => console.log(err));
@@ -42,21 +42,41 @@ app.get("/projects/update", (request,response) => {
 });
 
 app.post("/projects/create", (request,response) => {
-    console.log(request.body);
+    // console.log(request.body);
     // response.redirect("/projects");
 
     Project.create(request.body)
         .then(() => response.redirect("/projects"))
         .catch(err => console.log(err));
 });
+
+app.post("/projects/update", (request, response) => {
+    console.log("control:", request.body);
+    const project = request.body;
+    Project.findByIdAndUpdate(project._id, { name: project.name, description: project.description})
+        .then(() => response.redirect("/projects"))
+        .catch(err => console.log(err));
+});
+
 app.get("/projects/update/:id", (request,response) => {
     const id = request.params.id;
-    console.log(id);
+    // console.log(id);
     Project.findById(id)
         .then(project => {
-            console.log(project);
+            // console.log(project);
             response.render("projects/update", project)
         })
         .catch(err => console.log(err));
     // response.render("projects/update");
+});
+
+app.get("/projects/delete/:id", (request, response) => {
+    const id = request.params.id;
+    response.render("projects/delete", { _id:id});
+});
+
+app.post("/projects/delete", (request, response) => {
+    Project.findByIdAndDelete(request.body._id)
+        .then(() => response.redirect("/projects"))
+        .catch(err => console.log(err));
 });
