@@ -32,8 +32,13 @@ app.get("/projects", (request,response) => {
         .catch(err => console.log(err));
     // response.render("projects");
 });
+
 app.get("/projects/create", (request,response) => {
     response.render("projects/create");
+});
+
+app.get("/projects/update", (request,response) => {
+    response.render("projects/update");
 });
 
 app.post("/projects/create", (request,response) => {
@@ -43,4 +48,15 @@ app.post("/projects/create", (request,response) => {
     Project.create(request.body)
         .then(() => response.redirect("/projects"))
         .catch(err => console.log(err));
+});
+app.get("/projects/update/:id", (request,response) => {
+    const id = request.params.id;
+    console.log(id);
+    Project.findById(id)
+        .then(project => {
+            console.log(project);
+            response.render("projects/update", project)
+        })
+        .catch(err => console.log(err));
+    // response.render("projects/update");
 });

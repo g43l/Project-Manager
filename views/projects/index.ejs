@@ -7,6 +7,9 @@
             <i class="material-icons mdl-list__item-icon">dashboard</i>
             <%= project.name %>
         </span>
+        <a href="/projects/update/<%= project._id %>" class="mdl-button mdl-js-button mdl-button--fab">
+            <i class="material-icons">edit</i>
+        </a>
     </li>
     <%}); %>
 </ul>
