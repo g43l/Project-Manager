@@ -1,6 +1,7 @@
 <h3>Create a new User Story</h3>
 
 <form action="/userStories/create" method="POST">
+    <input type="hidden" name="projectId" value="<%= projectId %>" />
     <div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="title" name="title">
@@ -33,6 +34,7 @@
             <span class="mdl-textfield__error">Must be between 0 and 5</span>
         </div>
     </div>
+
     <!-- <div>
         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="0">
             <input type="radio" id="0" class="mdl-radio__button" name="priority" checked />

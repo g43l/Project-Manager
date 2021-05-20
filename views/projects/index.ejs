@@ -1,12 +1,16 @@
 <h3> Bienvenue dans vos Projets</h3>
+<a href="/projects/create/" class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect mdl-button--raised">Créer un projet</a>
 
 <ul class="mdl-list"></ul>
 <% projects.forEach(project=> {%>
     <li class="mdl-list__item">
+
         <span class="mdl-list__item-primary-content">
             <i class="material-icons mdl-list__item-icon">dashboard</i>
-            <%= project.name %>
-        </span>
+            <a href="userStories/<%=project._id%>">
+                <%= project.name %>
+            </a>
+            </span>
         <a href="/projects/update/<%= project._id %>" class="mdl-button mdl-js-button mdl-button--fab mdl-button">
             <i class="material-icons">edit</i>
         </a>

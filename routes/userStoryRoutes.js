@@ -3,8 +3,9 @@ const router = express.Router();
 const userStoryController = require("../controllers/userStoryController");
 
 router.get("/", userStoryController.all);
+router.get("/:projectId", userStoryController.allByProject);
 
-router.get("/create", userStoryController.createGet);
+router.get("/create/:projectId", userStoryController.createGet);
 router.post("/create", userStoryController.createPost);
 
 router.get("/update/:id", userStoryController.updateGet);

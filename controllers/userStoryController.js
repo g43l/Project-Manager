@@ -6,13 +6,22 @@ const all = (req,res) => {
         .then(userStories => res.render("userStories", { userStories}))
         .catch(err => console.log(err));
 };
+const allByProject = (request, response) => {
+    const projectId = request.params.projectId;
+    UserStory.find({projectId})
+        .then(userStories => response.render("userStories", { projectId, userStories }))
+        .catch(error => console.log(error));
+}; 
+
 const createGet = (request, response) => {
-    response.render("userStories/create");
+    const projectId = request.params.projectId;
+    response.render("userStories/create", {projectId});
 };
+
 const createPost = (request, response) => {
     UserStory.create(request.body)
-        .then(() => response.redirect("/userStories"))
-        .catch(err => console.log(err));
+        .then(() => response.redirect("/userStories/" + request.body.projectId))
+        .then(error => console.log(error));
 };
 
 const updatePost = (request, response) => {
@@ -43,6 +52,7 @@ const deletePost = (request, response) => {
 
 module.exports = {
     all,
+    allByProject,
     createGet,
     createPost,
     updateGet,
