@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<%- include("partials/head.ejs") %>
+
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <%- include("partials/nav.ejs") %>
+                <div class="content">
+                    <%- body %>
+                </div>
+        </div>
+    </body>
+
+    <%- include("partials/footer.ejs") %>
+
+</html>

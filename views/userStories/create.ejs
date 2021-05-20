@@ -1,0 +1,35 @@
+<h3>Create a new User Story</h3>
+
+<form action="/userStories/create" method="POST">
+    <div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="title" name="title">
+            <label class="mdl-textfield__label" for="title">Title</label>
+        </div>
+    </div>
+    <div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <textarea class="mdl-textfield__input" type="text" rows="3" id="description"
+                name="description"></textarea>
+            <label class="mdl-textfield__label" for="description">Description</label>
+        </div>
+    </div>
+    <div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="acceptanceCriteria" name="acceptanceCriteria">
+            <label class="mdl-textfield__label" for="acceptanceCriteria">Acceptance criteria</label>
+        </div>
+    </div>
+    <div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="number" id="priority" name="priority">
+            <label class="mdl-textfield__label" for="priority">Priority</label>
+        </div>
+    </div>
+    <a href="/userStories" class="mdl-button mdl-js-button mdl-button--raised">
+        Back
+    </a>
+    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        Create
+    </button>
+</form>
