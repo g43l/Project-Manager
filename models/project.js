@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   name: String,
-  description: String
+  description: String,
 });
 
 const Project = mongoose.model("Project", projectSchema)

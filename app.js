@@ -24,4 +24,4 @@ app.get("/", (request,response) => {
     response.redirect("/projects");
 });
 
-app.use(projectRoutes);
+app.use("/projects", projectRoutes);
