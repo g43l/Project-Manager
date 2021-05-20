@@ -20,12 +20,41 @@
             <label class="mdl-textfield__label" for="acceptanceCriteria">Acceptance criteria</label>
         </div>
     </div>
+    <!-- <div>
+        <div class="mdl-numberfield mdl-js-numberfield mdl-numberfield--floating-label">
+            <label class="mdl-numberfield__label" for="priority">Priority</label>
+            <input class="mdl-numberfield__input" type="number" id="priority" name="priority" min=0 max=5 value=0>
+        </div>
+    </div> -->
     <div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="number" id="priority" name="priority">
-            <label class="mdl-textfield__label" for="priority">Priority</label>
+            <label class="mdl-textfield__label"for="priority">Priority [0-5]</label>
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-5]*(\.[0-5]+)?" id="priority" name="priority">
+            <span class="mdl-textfield__error">Must be between 0 and 5</span>
         </div>
     </div>
+    <!-- <div>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="0">
+            <input type="radio" id="0" class="mdl-radio__button" name="priority" checked />
+            <span class="mdl-radio__label">0</span>
+        </label>       
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="1">
+            <input type="radio" id="1" class="mdl-radio__button" name="priority" />
+            <span class="mdl-radio__label">1</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="2">
+            <input type="radio" id="2" class="mdl-radio__button" name="priority"  />
+            <span class="mdl-radio__label">2</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="3">
+            <input type="radio" id="3" class="mdl-radio__button" name="priority"  />
+            <span class="mdl-radio__label">3</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="4">
+            <input type="radio" id="4" class="mdl-radio__button" name="priority" />
+            <span class="mdl-radio__label">4</span>
+        </label>
+    </div> -->
     <a href="/userStories" class="mdl-button mdl-js-button mdl-button--raised">
         Back
     </a>

@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html>
-<%- include("partials/head.ejs") %>
+<h3> Bienvenue dans vos User Stories</h3>
 
-    <body>
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <%- include("partials/nav.ejs") %>
-                <div class="content">
-                    <%- body %>
-                </div>
-        </div>
-    </body>
-
-    <%- include("partials/footer.ejs") %>
-
-</html>
+<ul class="mdl-list"></ul>
+<% userStories.forEach(userStory=> {%>
+    <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">dashboard</i>
+            <%= userStory.title %>
+        </span>
+        <a href="/userStories/update/<%= userStory._id %>" class="mdl-button mdl-js-button mdl-button--fab mdl-button">
+            <i class="material-icons">edit</i>
+        </a>
+        <a href="/userStories/delete/<%= userStory._id %>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent">
+            <i class="material-icons">delete</i>
+        </a>
+    </li>
+    <%}); %>
+</ul>
